@@ -1,0 +1,19 @@
+@(msg: String,datas: Form[Message])
+
+@import helper._
+
+@main("Sample Page") {
+
+  <h1>投稿メッセージID削除画面（指定したIDを削除する）</h1>
+  <a href="/" role="button">一覧に戻る</a>
+  <a href="/add" role="button">新規</a>
+  <a href="/setItem" role="button">投稿編集</a>
+  <a href="/find" role="button">投稿者検索</a>
+  <hr>
+  <p>@msg</p>
+  @helper.form(action = routes.Application.doDelete()) { 
+	  @helper.inputText(datas("id"),'_help->"Required")
+	  <input type="hidden" name="name" value="hoge">
+	  <input type="submit">
+   } 
+}

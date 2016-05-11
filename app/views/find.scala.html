@@ -1,0 +1,22 @@
+@(msg: String,datasForm: Form[Message],datas: List[Message])
+
+@import helper._
+
+@main("Sample Page") {
+
+  <h1>投稿者検索画面</h1>
+  <a href="/" role="button">一覧に戻る</a>
+  <a href="/add" role="button">新規</a>
+  <a href="/setItem" role="button">投稿編集</a>
+  <a href="/delete" role="button">削除</a>
+  <hr>
+  <p>@msg</p>
+  @helper.form(action = routes.Application.find()) { 
+	  @helper.inputText(datasForm("name"),'_label->"投稿者の名前を入力")
+	  <input type="submit">
+   } 
+  <hr>
+  @if(datas != null){
+     <pre>@datas</pre>
+  }
+}
