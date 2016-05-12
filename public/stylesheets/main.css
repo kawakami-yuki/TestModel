@@ -12,3 +12,17 @@ h1 {
   color: #ccffcc;
   padding: 3px;
 }
+
+pre {
+    /* Mozilla */
+    white-space: -moz-pre-wrap;
+    /* Opera 4-6 */
+    white-space: -pre-wrap;
+    /* Opera 7 */
+    white-space: -o-pre-wrap;
+
+    /* CSS3 */
+    white-space: pre-wrap;
+       /* IE 5.5+ */
+    word-wrap: break-word;
+}
